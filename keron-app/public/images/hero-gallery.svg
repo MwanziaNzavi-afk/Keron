@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#041d52"/>
+      <stop offset="100%" stop-color="#364978"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)" />
+  <circle cx="860" cy="240" r="140" fill="#d4af37" opacity="0.2" />
+  <rect x="120" y="120" width="900" height="520" rx="48" fill="#ffffff" opacity="0.08" />
+  <path d="M280 270C360 190 550 190 670 220C780 250 880 310 920 420C960 540 860 660 720 660C590 660 520 590 420 560C320 530 220 530 280 420Z" fill="#ffffff" opacity="0.18" />
+  <text x="155" y="380" font-family="Poppins, sans-serif" font-size="72" fill="#ffffff" font-weight="700">Luxury Living</text>
+  <text x="155" y="470" font-family="Poppins, sans-serif" font-size="32" fill="#f8f9fa" opacity="0.84">Premium homes, short stays, and investment-grade properties.</text>
+</svg>
