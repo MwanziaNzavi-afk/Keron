@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#F7F3EA"/>
+  <rect x="64" y="72" width="1072" height="656" rx="36" fill="white" stroke="#E3D5BC" stroke-width="3"/>
+  <rect x="112" y="128" width="420" height="240" rx="24" fill="#EEE3D1"/>
+  <rect x="568" y="128" width="520" height="240" rx="24" fill="#F8F3EA"/>
+  <rect x="112" y="400" width="976" height="220" rx="24" fill="#F2E7D3"/>
+  <rect x="160" y="444" width="220" height="24" rx="12" fill="#041D52" fill-opacity="0.2"/>
+  <rect x="160" y="486" width="320" height="20" rx="10" fill="#D4AF37" fill-opacity="0.38"/>
+  <rect x="160" y="524" width="180" height="20" rx="10" fill="#D4AF37" fill-opacity="0.38"/>
+  <path d="M258 196H344V284H258V196Z" fill="#041D52" fill-opacity="0.18"/>
+  <path d="M258 196L302 156L344 196" stroke="#041D52" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="220" y="686" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#041D52">Kingston Nyali Property Preview</text>
+</svg>

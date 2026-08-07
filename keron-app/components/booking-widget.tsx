@@ -5,10 +5,11 @@ import { useMemo, useState } from "react";
 interface BookingWidgetProps {
   price1: number; // price per night for 1 bedroom
   price2: number; // price per night for 2 bedroom
+  price3?: number; // price per night for 3 bedroom
 }
 
-export default function BookingWidget({ price1, price2 }: BookingWidgetProps) {
-  const [bedrooms, setBedrooms] = useState<1 | 2>(2);
+export default function BookingWidget({ price1, price2, price3 = 0 }: BookingWidgetProps) {
+  const [bedrooms, setBedrooms] = useState<1 | 2 | 3>(2);
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [guests, setGuests] = useState<number>(2);
@@ -23,9 +24,9 @@ export default function BookingWidget({ price1, price2 }: BookingWidgetProps) {
   }, [checkIn, checkOut]);
 
   const total = useMemo(() => {
-    const rate = bedrooms === 1 ? price1 : price2;
+    const rate = bedrooms === 1 ? price1 : bedrooms === 2 ? price2 : price3;
     return rate * nights;
-  }, [bedrooms, nights, price1, price2]);
+  }, [bedrooms, nights, price1, price2, price3]);
 
   async function handleBooking() {
     if (!checkIn || !checkOut || nights <= 0) {
@@ -60,6 +61,14 @@ export default function BookingWidget({ price1, price2 }: BookingWidgetProps) {
             >
               2 Bedroom
             </button>
+            {price3 > 0 ? (
+              <button
+                onClick={() => setBedrooms(3)}
+                className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold ${bedrooms === 3 ? "bg-[#041d52] text-white" : "bg-slate-50 text-slate-700"}`}
+              >
+                3 Bedroom
+              </button>
+            ) : null}
           </div>
         </div>
 
@@ -85,7 +94,7 @@ export default function BookingWidget({ price1, price2 }: BookingWidgetProps) {
           </div>
           <div className="mt-2 flex items-center justify-between">
             <span>Rate</span>
-            <strong>KES {(bedrooms === 1 ? price1 : price2).toLocaleString()}</strong>
+            <strong>KES {(bedrooms === 1 ? price1 : bedrooms === 2 ? price2 : price3).toLocaleString()}</strong>
           </div>
           <div className="mt-2 flex items-center justify-between text-lg">
             <span>Total</span>

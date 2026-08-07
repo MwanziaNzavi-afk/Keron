@@ -1,0 +1,17 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#F5F7FB"/>
+  <rect x="64" y="72" width="1072" height="656" rx="36" fill="white" stroke="#D9E2F0" stroke-width="3"/>
+  <rect x="112" y="128" width="320" height="180" rx="24" fill="#E8EEF7"/>
+  <rect x="464" y="128" width="624" height="180" rx="24" fill="#F2F5FA"/>
+  <rect x="112" y="352" width="976" height="220" rx="24" fill="#EAF2FF"/>
+  <circle cx="214" cy="218" r="54" fill="#041D52" fill-opacity="0.12"/>
+  <path d="M182 230L214 192L246 230" stroke="#041D52" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M176 230H252" stroke="#041D52" stroke-width="16" stroke-linecap="round"/>
+  <rect x="160" y="424" width="220" height="26" rx="13" fill="#041D52" fill-opacity="0.2"/>
+  <rect x="160" y="470" width="320" height="22" rx="11" fill="#D4AF37" fill-opacity="0.35"/>
+  <rect x="160" y="510" width="180" height="22" rx="11" fill="#D4AF37" fill-opacity="0.35"/>
+  <rect x="520" y="426" width="220" height="26" rx="13" fill="#041D52" fill-opacity="0.12"/>
+  <rect x="520" y="472" width="280" height="22" rx="11" fill="#041D52" fill-opacity="0.12"/>
+  <rect x="520" y="512" width="170" height="22" rx="11" fill="#041D52" fill-opacity="0.12"/>
+  <text x="220" y="686" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#041D52">Malindi Property Preview</text>
+</svg>
