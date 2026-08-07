@@ -1,7 +1,0 @@
-<svg width="640" height="320" viewBox="0 0 640 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="320" rx="32" fill="#081c4f"/>
-  <path d="M160 184V128L240 104L320 128V184H280V144L240 128L200 144V184H160Z" fill="#D4AF37"/>
-  <path d="M256 128H384L448 176V232H400V184H320V232H272V176L256 160V128Z" fill="#D4AF37" opacity="0.8"/>
-  <text x="44" y="256" fill="#F3E5B8" font-family="Poppins, sans-serif" font-size="44" font-weight="700">KERON PREMIER</text>
-  <text x="44" y="294" fill="#76E0E8" font-family="Poppins, sans-serif" font-size="24" font-weight="500">PROPERTY SOLUTIONS</text>
-</svg>
