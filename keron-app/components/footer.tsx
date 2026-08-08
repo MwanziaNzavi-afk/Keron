@@ -53,9 +53,15 @@ export function Footer() {
         <div>
           <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.32em] text-slate-300/90">Connect</h3>
           <div className="flex flex-wrap gap-3">
-            <Link href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 transition hover:bg-white/20">
+            <a
+              href="https://instagram.com/keronpremierproperties8?igsh=MTl0dW16anltNGFnZQ=="
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit Keron Premier Properties on Instagram"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 transition hover:bg-white/20"
+            >
               <Instagram className="h-5 w-5" />
-            </Link>
+            </a>
             <Link href="#" className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 transition hover:bg-white/20">
               <Linkedin className="h-5 w-5" />
             </Link>
