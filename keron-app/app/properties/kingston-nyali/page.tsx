@@ -27,7 +27,7 @@ export default function Page() {
     <div className="min-h-screen">
       <Navbar />
       <main className="container mx-auto px-6 py-10 xl:px-0">
-        <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
+        <div className="grid min-w-0 gap-8 xl:grid-cols-[minmax(0,1fr)_380px]">
           <div className="space-y-6">
             <PropertyGallery images={IMAGES} />
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-soft">

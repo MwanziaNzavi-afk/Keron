@@ -50,7 +50,7 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -112,7 +112,7 @@ export function Navbar() {
           </div>
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 transition hover:border-[#041d52] hover:text-[#041d52]"
@@ -131,7 +131,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:border-slate-300 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 shadow-sm transition hover:border-slate-300 xl:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
         >
@@ -143,7 +143,7 @@ export function Navbar() {
         <motion.div
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
-          className="overflow-hidden border-t border-white/80 bg-white/95 lg:hidden"
+          className="overflow-hidden border-t border-white/80 bg-white/95 xl:hidden"
         >
           <div className="flex flex-col gap-3 px-6 py-5">
             {navItems.map((item) => (
