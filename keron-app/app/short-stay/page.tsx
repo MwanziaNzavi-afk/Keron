@@ -1,54 +1,11 @@
-import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { PropertyCard } from "@/components/property-card";
+import { Navbar } from "@/components/navbar";
+import { ShortStayListings } from "@/components/short-stay-listings";
 
 export const metadata = {
-  title: "Short Stay — Keron Premier Properties",
-  description: "Short stay luxury apartments and serviced properties for nightly bookings.",
+  title: "Short Stay | Keron Premier Properties",
+  description: "Search short-stay apartments and serviced properties by location.",
 };
-
-const stays = [
-  {
-    title: "Bamburi Fisheries Apartments",
-    location: "Bamburi Fisheries, Mombasa",
-    price: "KES 3,000 - 4,000 / night",
-    href: "/properties/bamburi-fisheries-apartments",
-    image: "/uploads/bamburi/outside.png",
-    bedrooms: "1 - 2 Beds",
-    bathrooms: "1 - 2 Baths",
-    badge: "Featured",
-  },
-  {
-    title: "Malindi",
-    location: "Malindi, Coast",
-    price: "KES 6,000 / night",
-    href: "/properties/malindi",
-    image: "/uploads/malindi/Swimming%20Pool.png",
-    bedrooms: "1 Bed",
-    bathrooms: "1 Bath",
-    badge: "Coastal Stay",
-  },
-  {
-    title: "Kingston Nyali",
-    location: "Nyali, Mombasa",
-    price: "KES 8,000 - 20,000 / night",
-    href: "/properties/kingston-nyali",
-    image: "/uploads/kingston-nyali/Outside.png",
-    bedrooms: "1 - 3 Beds",
-    bathrooms: "1 - 2 Baths",
-    badge: "Premium",
-  },
-  {
-    title: "Studio Mlolongo",
-    location: "Behind Signature Mall, Mlolongo",
-    price: "KES 2,500 net / night",
-    href: "/properties/mlolongo-apartment",
-    image: "/uploads/mlolongo/Sitting%20Room.png",
-    bedrooms: "Studio",
-    bathrooms: "1 Bath",
-    badge: "Short Stay",
-  },
-];
 
 export default function ShortStayPage() {
   return (
@@ -57,14 +14,9 @@ export default function ShortStayPage() {
       <main className="container mx-auto px-6 py-10 xl:px-0">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold">Short Stay</h1>
-          <p className="mt-2 text-slate-600">Hand-picked short-stay apartments with premium amenities and concierge support.</p>
+          <p className="mt-2 text-slate-600">Find a hand-picked short-stay apartment in the location that suits you.</p>
         </header>
-
-        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stays.map((s) => (
-            <PropertyCard key={s.href} {...s} />
-          ))}
-        </section>
+        <ShortStayListings />
       </main>
       <Footer />
     </div>

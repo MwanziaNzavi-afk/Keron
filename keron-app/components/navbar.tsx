@@ -9,8 +9,6 @@ import { useState } from "react";
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Properties", href: "/properties" },
-  { label: "Short Stay", href: "/short-stay" },
-  { label: "Locations", href: "/locations" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -21,9 +19,15 @@ const serviceLinks = [
   { label: "Short Stay", description: "Book a furnished stay", href: "/short-stay" },
 ];
 
+const shortStayLinks = [
+  { label: "Browse Short Stays", description: "View all furnished stays", href: "/short-stay" },
+  { label: "Search by Location", description: "Find stays in your preferred area", href: "/short-stay#location-search" },
+];
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [shortStayOpen, setShortStayOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/15 bg-white/85 backdrop-blur-xl">
@@ -49,6 +53,28 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
+          <div className="relative">
+            <button
+              type="button"
+              className="inline-flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-[#041d52]"
+              onClick={() => setShortStayOpen((isOpen) => !isOpen)}
+              aria-expanded={shortStayOpen}
+              aria-haspopup="menu"
+            >
+              Short Stay
+              <ChevronDown className={`h-4 w-4 transition ${shortStayOpen ? "rotate-180" : ""}`} />
+            </button>
+            {shortStayOpen ? (
+              <div className="absolute left-1/2 top-full z-50 mt-4 w-80 -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" role="menu">
+                {shortStayLinks.map((item) => (
+                  <Link key={item.href} href={item.href} role="menuitem" className="block rounded-xl px-4 py-3 transition hover:bg-slate-50" onClick={() => setShortStayOpen(false)}>
+                    <span className="block text-sm font-semibold text-slate-950">{item.label}</span>
+                    <span className="mt-1 block text-xs text-slate-500">{item.description}</span>
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+          </div>
           <div className="relative">
             <button
               type="button"
@@ -123,6 +149,14 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <div className="rounded-3xl bg-slate-50 p-2">
+              <p className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Short Stay</p>
+              {shortStayLinks.map((item) => (
+                <Link key={item.href} href={item.href} className="block rounded-2xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white" onClick={() => setOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
             <div className="rounded-3xl bg-slate-50 p-2">
               <p className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Services</p>
               {serviceLinks.map((item) => (
