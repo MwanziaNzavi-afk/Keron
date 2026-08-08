@@ -15,8 +15,15 @@ const navItems = [
 
 const serviceLinks = [
   { label: "All Services", description: "Our full real estate offering", href: "/services" },
-  { label: "Properties", description: "Browse sales, rentals and investments", href: "/properties" },
-  { label: "Short Stay", description: "Book a furnished stay", href: "/short-stay" },
+  { label: "Property Sales", description: "Buy or sell with confidence", href: "/services#property-sales" },
+  { label: "Property Rentals", description: "Find the right rental", href: "/services#property-rentals" },
+  { label: "Short Stay Apartments", description: "Book a furnished stay", href: "/short-stay" },
+  { label: "Land Sales", description: "Verified land opportunities", href: "/services#land-sales" },
+  { label: "Property Management", description: "Protect and manage your asset", href: "/services#property-management" },
+  { label: "Commercial Properties", description: "Business and investment spaces", href: "/services#commercial-properties" },
+  { label: "Real Estate Consultancy", description: "Professional property advice", href: "/services#real-estate-consultancy" },
+  { label: "Property Marketing", description: "Market your property effectively", href: "/services#property-marketing" },
+  { label: "Property Valuation", description: "Valuation support and guidance", href: "/services#property-valuation" },
 ];
 
 const shortStayLinks = [
@@ -65,7 +72,7 @@ export function Navbar() {
               <ChevronDown className={`h-4 w-4 transition ${shortStayOpen ? "rotate-180" : ""}`} />
             </button>
             {shortStayOpen ? (
-              <div className="absolute left-1/2 top-full z-50 mt-4 w-80 -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" role="menu">
+              <div className="absolute left-1/2 top-full z-50 mt-4 max-h-[calc(100vh-7rem)] w-80 -translate-x-1/2 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-soft" role="menu">
                 {shortStayLinks.map((item) => (
                   <Link key={item.href} href={item.href} role="menuitem" className="block rounded-xl px-4 py-3 transition hover:bg-slate-50" onClick={() => setShortStayOpen(false)}>
                     <span className="block text-sm font-semibold text-slate-950">{item.label}</span>

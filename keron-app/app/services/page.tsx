@@ -7,15 +7,15 @@ export const metadata = {
 };
 
 const services = [
-  "Property Sales",
-  "Property Rentals",
-  "Short Stay Apartments",
-  "Land Sales",
-  "Property Management",
-  "Commercial Properties",
-  "Real Estate Consultancy",
-  "Property Marketing",
-  "Property Valuation",
+  { title: "Property Sales", id: "property-sales" },
+  { title: "Property Rentals", id: "property-rentals" },
+  { title: "Short Stay Apartments", id: "short-stay-apartments" },
+  { title: "Land Sales", id: "land-sales" },
+  { title: "Property Management", id: "property-management" },
+  { title: "Commercial Properties", id: "commercial-properties" },
+  { title: "Real Estate Consultancy", id: "real-estate-consultancy" },
+  { title: "Property Marketing", id: "property-marketing" },
+  { title: "Property Valuation", id: "property-valuation" },
 ];
 
 export default function ServicesPage() {
@@ -27,10 +27,10 @@ export default function ServicesPage() {
         <p className="mt-3 text-slate-600">We provide end-to-end real estate services to buyers, sellers and investors.</p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div key={s} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
-              <h3 className="font-semibold">{s}</h3>
-              <p className="mt-2 text-sm text-slate-600">Professional {s.toLowerCase()} with transparent pricing and experienced consultants.</p>
+          {services.map((service) => (
+            <div id={service.id} key={service.id} className="scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 className="font-semibold">{service.title}</h3>
+              <p className="mt-2 text-sm text-slate-600">Professional {service.title.toLowerCase()} with transparent pricing and experienced consultants.</p>
             </div>
           ))}
         </div>
