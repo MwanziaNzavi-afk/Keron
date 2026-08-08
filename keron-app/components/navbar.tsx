@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X, Phone, Briefcase, Home, Sparkles } from "lucide-react";
 import { useState } from "react";
@@ -21,14 +22,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/15 bg-white/85 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between gap-6 px-6 py-4 xl:px-0">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="grid h-12 w-12 place-items-center rounded-3xl bg-[#041d52] text-white shadow-card">
-            <span className="text-lg font-black">KP</span>
-          </div>
-          <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Keron Premier</p>
-            <p className="text-lg font-semibold text-slate-950">Properties</p>
-          </div>
+        <Link href="/" className="shrink-0">
+          <Image
+            src="/images/keron-premier-logo.png"
+            alt="Keron Premier Properties"
+            width={565}
+            height={313}
+            className="h-14 w-auto rounded-md object-contain sm:h-16"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

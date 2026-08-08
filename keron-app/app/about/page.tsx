@@ -15,6 +15,7 @@ const values = [
   ["Innovation", "We embrace technology and continuously develop smarter ways of delivering property solutions."],
   ["Customer first", "Our clients remain at the centre of every decision we make."],
   ["Collaboration", "We believe lasting success comes through strong partnerships and teamwork."],
+  ["Sustainability", "We support responsible development that creates long-term value for communities and future generations."],
 ];
 
 export default function AboutPage() {
@@ -35,6 +36,12 @@ export default function AboutPage() {
               <Image src="/images/keron-premier-logo.png" alt="Keron Premier Properties" width={160} height={160} className="h-auto w-full" priority />
             </div>
           </div>
+        </section>
+
+        <section className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b08f24]">Our story</p>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-950">A modern real estate ecosystem, built around people.</h2>
+          <p className="mt-5 max-w-4xl leading-8 text-slate-600">KERON Premier Properties was established to bridge the gap between people and quality real estate opportunities. We address fragmented information, lengthy transactions and limited access to trusted property data by bringing end-to-end property services together under one roof. From Mombasa, we are growing a trusted national partner and an intelligent property platform that pairs digital innovation with human expertise.</p>
         </section>
 
         <section className="mt-12 grid gap-12 lg:grid-cols-[1.45fr_0.85fr] lg:items-start">
@@ -79,7 +86,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-12 grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft lg:grid-cols-2">
-          <Image src="/uploads/mlolongo/Balcony.png" alt="A balcony at one of Keron Premier Properties' homes" width={1200} height={700} className="h-full min-h-72 w-full object-cover" />
+          <Image src="/uploads/kingston-nyali/Outside.png" alt="A Keron Premier Properties residence" width={1200} height={700} className="h-full min-h-72 w-full object-cover" />
           <div className="flex flex-col justify-center p-8 md:p-12">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b08f24]">Sustainable value</p>
             <h2 className="mt-4 text-3xl font-semibold text-slate-950">Building value that lasts.</h2>

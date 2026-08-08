@@ -10,10 +10,14 @@ export const metadata = {
 };
 
 const IMAGES = [
-  // Drop your real images into `public/uploads/bamburi/` and they will appear here.
-  "/images/bamburi-apartment.svg",
-  "/images/hero-gallery.svg",
-  "/images/mlolongo.svg",
+  "/uploads/bamburi/outside.png",
+  "/uploads/bamburi/sitting-room-1.png",
+  "/uploads/bamburi/sitting-room-2.png",
+  "/uploads/bamburi/sitting-room-3.png",
+  "/uploads/bamburi/dining-room-1.png",
+  "/uploads/bamburi/bedroom-1.png",
+  "/uploads/bamburi/bedroom-3.png",
+  "/uploads/bamburi/bedroom-4.png",
 ];
 
 export default function Page() {

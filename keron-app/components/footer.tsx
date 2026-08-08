@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Mail, Phone, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
@@ -14,15 +15,13 @@ export function Footer() {
     <footer className="border-t border-white/15 bg-[#041d52] text-white/90">
       <div className="container mx-auto grid gap-10 px-6 py-16 xl:px-0 lg:grid-cols-[1.6fr_1fr_1fr]">
         <div className="space-y-5">
-          <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-3xl bg-[#d4af37] text-[#041d52] shadow-card">
-              <span className="text-lg font-black">KP</span>
-            </div>
-            <div>
-              <p className="text-sm uppercase tracking-[0.32em] text-slate-200/80">Keron Premier Properties</p>
-              <p className="text-2xl font-semibold text-white">Where Dreams Find an Address</p>
-            </div>
-          </div>
+          <Image
+            src="/images/keron-premier-logo.png"
+            alt="Keron Premier Properties"
+            width={565}
+            height={313}
+            className="h-28 w-auto rounded-lg object-contain"
+          />
           <p className="max-w-md text-sm leading-7 text-slate-200/80">
             Luxury property sales, rentals, short stay stays and investment consultancy across Kenya’s premium coastal and Nairobi corridors.
           </p>

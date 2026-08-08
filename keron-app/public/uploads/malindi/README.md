@@ -1,3 +1,4 @@
-Upload Malindi property images here.
+Upload the main Malindi listing photo here and name it `malindi.jpg`.
 
-Once files are added, they will appear on the Malindi property page automatically.
+The Short Stay card and Malindi property page both use this exact path:
+`/uploads/malindi/malindi.jpg`

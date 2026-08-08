@@ -9,7 +9,14 @@ export const metadata = {
 };
 
 const IMAGES = [
-  "/uploads/malindi/placeholder.svg",
+  "/uploads/malindi/Swimming%20Pool.png",
+  "/uploads/malindi/Swimming%20Pool2.png",
+  "/uploads/malindi/Sitting%20Room.png",
+  "/uploads/malindi/Sitting%20Room1.png",
+  "/uploads/malindi/Sitting%20Room2.png",
+  "/uploads/malindi/Bedroom.png",
+  "/uploads/malindi/Bedroom2.png",
+  "/uploads/malindi/Bed.png",
 ];
 
 export default function Page() {

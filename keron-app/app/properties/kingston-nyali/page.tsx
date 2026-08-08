@@ -9,7 +9,17 @@ export const metadata = {
 };
 
 const IMAGES = [
-  "/uploads/kingston-nyali/placeholder.svg",
+  "/uploads/kingston-nyali/Outside.png",
+  "/uploads/kingston-nyali/Screenshot_1.png",
+  "/uploads/kingston-nyali/Screenshot_2.png",
+  "/uploads/kingston-nyali/Screenshot_3.png",
+  "/uploads/kingston-nyali/Screenshot_4.png",
+  "/uploads/kingston-nyali/Screenshot_5.png",
+  "/uploads/kingston-nyali/Screenshot_6.png",
+  "/uploads/kingston-nyali/Screenshot_7.png",
+  "/uploads/kingston-nyali/Screenshot_8.png",
+  "/uploads/kingston-nyali/Screenshot_9.png",
+  "/uploads/kingston-nyali/Screenshot_10.png",
 ];
 
 export default function Page() {
