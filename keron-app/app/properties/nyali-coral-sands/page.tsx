@@ -11,13 +11,13 @@ export const metadata = {
 
 // Use the actual uploaded filenames present in public/uploads/mlolongo/
 const IMAGES = [
-  "/uploads/mlolongo/Balcony.png",
-  "/uploads/mlolongo/Bedroom.jpeg",
-  "/uploads/mlolongo/Bedroom2.jpeg.png",
-  "/uploads/mlolongo/Kitchenette.png",
-  "/uploads/mlolongo/Kitchenette2.png",
-  "/uploads/mlolongo/Sitting%20room.png",
-  "/uploads/mlolongo/Washroom.png",
+  "/uploads/nyali-coral-sands/balcony.png",
+  "/uploads/nyali-coral-sands/sitting-room.png",
+  "/uploads/nyali-coral-sands/bedroom-1.jpeg",
+  "/uploads/nyali-coral-sands/bedroom-2.jpeg",
+  "/uploads/nyali-coral-sands/kitchenette-1.png",
+  "/uploads/nyali-coral-sands/kitchenette-2.png",
+  "/uploads/nyali-coral-sands/washroom.png",
 ];
 
 export default function Page() {
