@@ -63,7 +63,7 @@ export function PropertyCard({ title, location, price, href, image, bedrooms, ba
           <p className="text-lg font-semibold text-slate-950">{price}</p>
           <Link
             href={href}
-            className="rounded-full bg-[#d4af37] px-5 py-3 text-sm font-bold text-[#041d52] shadow-[0_10px_24px_rgba(212,175,55,0.3)] transition hover:bg-[#e5c65a] hover:shadow-[0_14px_30px_rgba(212,175,55,0.4)]"
+            className="rounded-full bg-[#041d52] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_42px_rgba(4,29,82,0.24)] transition hover:bg-[#041d52]"
           >
             View Details
           </Link>
