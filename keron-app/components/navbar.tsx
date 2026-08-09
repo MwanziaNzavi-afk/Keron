@@ -120,13 +120,6 @@ export function Navbar() {
             <Phone className="h-4 w-4" />
             0708 669 141
           </Link>
-          <Link
-            href="/admin/login"
-            className="inline-flex items-center gap-2 rounded-full bg-[#041d52] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0b2a71]"
-          >
-            <Briefcase className="h-4 w-4" />
-            Admin Login
-          </Link>
         </div>
 
         <button
