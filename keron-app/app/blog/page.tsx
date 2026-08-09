@@ -2,55 +2,15 @@ import Image from "next/image";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
-import { ArrowRight, Clock3, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Clock3, Sparkles } from "lucide-react";
+import { blogPosts } from "@/app/blog/blogData";
 
 export const metadata = {
   title: "Blog — Keron Premier Properties",
   description: "Insights, guides and market trends for Kenya real estate.",
 };
 
-const posts = [
-  {
-    slug: "buying-property-in-mombasa",
-    title: "Buying Property in Mombasa: A Coastal Investment Guide",
-    excerpt:
-      "Explore the most desirable seafront areas, legal checks, financing options, and negotiation tips for buyers pursuing coastal homes in Mombasa.",
-    category: "Investment",
-    date: "Aug 9, 2026",
-    minutes: 6,
-    image: "/images/hero-gallery.png",
-  },
-  {
-    slug: "land-investment-guide",
-    title: "Land Investment: Finding High-Growth Coastal Plots",
-    excerpt:
-      "Learn how to evaluate beachfront and commercial land in Kenya, from title searches to infrastructure, zoning and long-term returns.",
-    category: "Land",
-    date: "Jul 28, 2026",
-    minutes: 5,
-    image: "/uploads/bamburi/outside.png",
-  },
-  {
-    slug: "why-invest-in-vipingo",
-    title: "Why Invest in Vipingo Now",
-    excerpt:
-      "Vipingo is emerging as one of Kenya’s most promising coastal developments—discover what makes it ideal for rental income and family living.",
-    category: "Market",
-    date: "Jul 15, 2026",
-    minutes: 4,
-    image: "/uploads/kingston-nyali/Outside.png",
-  },
-  {
-    slug: "market-trends",
-    title: "Real Estate Market Trends for 2026",
-    excerpt:
-      "A clear review of rental demand, property values, and short-stay growth in coastal and Nairobi neighborhoods for strategic buyers.",
-    category: "Insights",
-    date: "Jun 30, 2026",
-    minutes: 5,
-    image: "/uploads/mlolongo/Sitting%20Room.png",
-  },
-];
+const posts = blogPosts;
 
 export default function BlogPage() {
   return (
