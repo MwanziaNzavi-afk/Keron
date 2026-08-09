@@ -63,7 +63,7 @@ export function PropertyCard({ title, location, price, href, image, bedrooms, ba
           <p className="text-lg font-semibold text-slate-950">{price}</p>
           <Link
             href={href}
-            className="inline-flex items-center justify-center rounded-full bg-[#041d52] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_42px_rgba(4,29,82,0.24)] transition duration-200 hover:bg-[#07256b] hover:shadow-[0_16px_48px_rgba(4,29,82,0.28)] focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2"
+            className="inline-flex min-w-[150px] items-center justify-center rounded-full border border-white/10 bg-gradient-to-r from-[#1d5ebf] via-[#0c3f8a] to-[#041d52] px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white shadow-[0_22px_48px_rgba(4,29,82,0.22)] transition duration-200 hover:from-[#1149a7] hover:via-[#0b3474] hover:to-[#041d52] hover:shadow-[0_24px_56px_rgba(4,29,82,0.28)] focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2"
           >
             View Details
           </Link>
