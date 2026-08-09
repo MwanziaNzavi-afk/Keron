@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck, Sparkles, Star, UserCheck } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -19,17 +19,17 @@ const featuredProperties = [
     badge: "Featured",
   },
   {
-    title: "Malindi",
+    title: "Malindi Coastal Escape",
     location: "Malindi, Coast",
     price: "KES 6,000 / night",
     href: "/properties/malindi",
     image: "/uploads/malindi/Swimming%20Pool.png",
     bedrooms: "1 Bedroom",
     bathrooms: "1 Bathroom",
-    badge: "Coastal Stay",
+    badge: "Coastal",
   },
   {
-    title: "Kingston Nyali",
+    title: "Kingston Nyali Residences",
     location: "Nyali, Mombasa",
     price: "KES 8,000 - 20,000 / night",
     href: "/properties/kingston-nyali",
@@ -39,9 +39,9 @@ const featuredProperties = [
     badge: "Premium",
   },
   {
-    title: "Studio Mlolongo",
+    title: "Studio Mlolongo Retreat",
     location: "Behind Signature Mall, Mlolongo",
-    price: "KES 2,500 net / night",
+    price: "KES 2,500 / night",
     href: "/properties/mlolongo-apartment",
     image: "/uploads/mlolongo/Sitting%20Room.png",
     bedrooms: "Studio",
@@ -70,20 +70,48 @@ const sectionCards = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(4,29,82,0.08),_transparent_28%),linear-gradient(180deg,_#f9fbfd,_#fff)]">
       <Navbar />
       <main className="container mx-auto px-6 py-10 xl:px-0">
         <Hero />
 
-        <section className="mt-20 space-y-10">
+        <section className="mt-16 rounded-[3rem] bg-white/95 p-8 shadow-soft ring-1 ring-slate-200/70 backdrop-blur-xl">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Best selling properties</p>
+              <h2 className="mt-3 text-4xl font-semibold text-slate-950">High-demand coastal homes done right.</h2>
+              <p className="mt-4 max-w-xl text-lg leading-8 text-slate-600">
+                Browse listings that attract guests, buyers and investors fast. Each property is hand-picked for its location, revenue potential, and premium finish.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { label: "Properties sold", value: "+238" },
+                { label: "Trusted rating", value: "4.9/5" },
+                { label: "Guest stays", value: "+1,400" },
+              ].map((item) => (
+                <div key={item.label} className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 text-center">
+                  <p className="text-3xl font-semibold text-slate-950">{item.value}</p>
+                  <p className="mt-2 text-sm uppercase tracking-[0.24em] text-slate-500">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14 space-y-10">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Investment-ready sales</p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-950">Premium property solutions for every buyer and investor.</h2>
+              <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Featured listings</p>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-950">Lively homes with premium returns and strong demand.</h2>
             </div>
-            <div className="rounded-full border border-slate-200 bg-white px-6 py-4 text-sm font-semibold text-slate-700 shadow-soft">
-              Discover curated listings, trusted agents, and private short-stay offers.
-            </div>
+            <Link
+              href="/properties"
+              className="inline-flex items-center gap-2 rounded-full bg-[#041d52] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0b2a71]"
+            >
+              Browse all listings
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             {featuredProperties.map((property) => (
@@ -100,10 +128,10 @@ export default function Home() {
 
         <section className="mt-24 grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Why Choose Us</p>
-            <h2 className="text-3xl font-semibold text-slate-950">Luxury service built on trust, experience and compelling returns.</h2>
+            <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Why choose Keron</p>
+            <h2 className="text-3xl font-semibold text-slate-950">A premium buying and booking journey designed to convert.</h2>
             <p className="max-w-xl text-lg leading-8 text-slate-600">
-              Keron Premier Properties offers an elevated customer experience with transparent transactions, verified listings, legal support and local market intelligence.
+              We provide verified listings, legal support, marketing-ready staging, and local market intelligence so you can buy, book or invest with confidence.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
@@ -120,35 +148,12 @@ export default function Home() {
           </div>
           <div className="relative overflow-hidden rounded-[3rem] border border-slate-200 bg-white shadow-soft">
             <Image
-              src="/images/hero-gallery.svg"
+              src="/images/hero-gallery.png"
               alt="Luxury real estate showcase"
               width={900}
               height={700}
               className="h-full w-full object-cover"
             />
-          </div>
-        </section>
-
-        <section className="mt-24 rounded-[3rem] bg-[#041d52] p-10 text-white shadow-soft">
-          <div className="grid gap-8 lg:grid-cols-[1fr_0.65fr] lg:items-center">
-            <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.32em] text-slate-300/80">CEO Message</p>
-              <h2 className="text-3xl font-semibold">A personal welcome from our founder.</h2>
-              <p className="max-w-xl leading-8 text-slate-200/90">
-                “At Keron Premier Properties, we blend local market knowledge with a premium customer experience. Every property, service and guest stay is curated to exceed expectations and build long-term trust.”
-              </p>
-              <p className="font-semibold text-[#d4af37]">Yvon Khasiala — Founder</p>
-            </div>
-            <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/10 p-8">
-              <div className="rounded-3xl bg-[#0b2a71]/95 p-6">
-                <p className="text-sm uppercase tracking-[0.32em] text-slate-300/80">Office</p>
-                <p className="mt-3 text-xl font-semibold">Mombasa Coastal HQ</p>
-              </div>
-              <div className="rounded-3xl bg-[#0b2a71]/95 p-6">
-                <p className="text-sm uppercase tracking-[0.32em] text-slate-300/80">Featured Location</p>
-                <p className="mt-3 text-xl font-semibold">Bamburi Fisheries</p>
-              </div>
-            </div>
           </div>
         </section>
       </main>
