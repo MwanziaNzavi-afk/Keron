@@ -37,7 +37,7 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <BookingWidget price1={6000} price2={6000} price3={6000} />
+            <BookingWidget propertySlug="malindi" price1={6000} price2={6000} price3={6000} />
           </div>
         </div>
       </main>

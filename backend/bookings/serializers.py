@@ -18,6 +18,8 @@ class PropertySerializer(serializers.ModelSerializer):
         ]
 
 class BookingRequestSerializer(serializers.ModelSerializer):
+    property = serializers.SlugRelatedField(slug_field="slug", queryset=Property.objects.all())
+
     class Meta:
         model = BookingRequest
         fields = [

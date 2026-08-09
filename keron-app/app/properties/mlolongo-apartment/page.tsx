@@ -41,7 +41,7 @@ export default function MlolongoApartmentPage() {
               </div>
             </section>
           </div>
-          <BookingWidget price1={2500} price2={2500} />
+          <BookingWidget propertySlug="mlolongo-apartment" price1={2500} price2={2500} />
         </div>
       </main>
       <Footer />

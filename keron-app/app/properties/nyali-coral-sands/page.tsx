@@ -81,7 +81,7 @@ export default function Page() {
           </div>
 
           <div>
-            <BookingWidget price1={2500} price2={2500} />
+            <BookingWidget propertySlug="nyali-coral-sands" price1={2500} price2={2500} />
 
             <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-sm shadow-soft">
               <h4 className="font-semibold">Contact</h4>

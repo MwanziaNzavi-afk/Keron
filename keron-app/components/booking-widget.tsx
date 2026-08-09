@@ -6,14 +6,21 @@ interface BookingWidgetProps {
   price1: number; // price per night for 1 bedroom
   price2: number; // price per night for 2 bedroom
   price3?: number; // price per night for 3 bedroom
+  propertySlug: string;
 }
 
-export default function BookingWidget({ price1, price2, price3 = 0 }: BookingWidgetProps) {
+export default function BookingWidget({ price1, price2, price3 = 0, propertySlug }: BookingWidgetProps) {
   const [bedrooms, setBedrooms] = useState<1 | 2 | 3>(2);
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [guests, setGuests] = useState<number>(2);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const nights = useMemo(() => {
     if (!checkIn || !checkOut) return 0;
@@ -29,15 +36,64 @@ export default function BookingWidget({ price1, price2, price3 = 0 }: BookingWid
   }, [bedrooms, nights, price1, price2, price3]);
 
   async function handleBooking() {
-    if (!checkIn || !checkOut || nights <= 0) {
-      alert("Please select valid check-in and check-out dates.");
+    setFeedback(null);
+    setError(null);
+
+    if (!fullName.trim() || !email.trim() || !phone.trim()) {
+      setError("Please enter your name, email, and phone number.");
       return;
     }
+
+    if (!checkIn || !checkOut || nights <= 0) {
+      setError("Please select valid check-in and check-out dates.");
+      return;
+    }
+
+    if (guests <= 0) {
+      setError("Please enter a valid number of guests.");
+      return;
+    }
+
     setLoading(true);
+
     try {
-      // Placeholder: integrate with Supabase / API route for real booking
-      await new Promise((r) => setTimeout(r, 700));
-      alert(`Booking request sent. Total: KES ${total.toLocaleString()}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:8000"}/api/bookings/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          property: propertySlug,
+          full_name: fullName,
+          email,
+          phone,
+          bedrooms,
+          guests,
+          check_in: checkIn,
+          check_out: checkOut,
+          total_price: total,
+          notes,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.detail || "Unable to send booking request. Please try again.");
+        return;
+      }
+
+      setFeedback("Booking request sent! We will contact you soon.");
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setNotes("");
+      setCheckIn("");
+      setCheckOut("");
+      setGuests(2);
+      setBedrooms(2);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Booking request failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -83,8 +139,49 @@ export default function BookingWidget({ price1, price2, price3 = 0 }: BookingWid
         </div>
 
         <div>
+          <label className="block text-sm text-slate-600">Full name</label>
+          <input
+            className="mt-2 w-full rounded-lg border border-slate-200 p-2"
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm text-slate-600">Email</label>
+          <input
+            className="mt-2 w-full rounded-lg border border-slate-200 p-2"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm text-slate-600">Phone</label>
+          <input
+            className="mt-2 w-full rounded-lg border border-slate-200 p-2"
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
+        <div>
           <label className="block text-sm text-slate-600">Guests</label>
           <input className="mt-2 w-full rounded-lg border border-slate-200 p-2" type="number" min={1} value={guests} onChange={(e) => setGuests(Number(e.target.value))} />
+        </div>
+
+        <div>
+          <label className="block text-sm text-slate-600">Notes</label>
+          <textarea
+            className="mt-2 w-full rounded-lg border border-slate-200 p-2"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            rows={3}
+            placeholder="Optional message for your booking"
+          />
         </div>
 
         <div className="rounded-lg bg-slate-50 p-3 text-sm">
@@ -102,11 +199,23 @@ export default function BookingWidget({ price1, price2, price3 = 0 }: BookingWid
           </div>
         </div>
 
+        {error ? <p className="text-sm text-red-600">{error}</p> : null}
+        {feedback ? <p className="text-sm text-emerald-700">{feedback}</p> : null}
+
         <div className="grid gap-3">
-          <button onClick={handleBooking} disabled={loading} className="rounded-full bg-[#041d52] px-4 py-3 text-sm font-semibold text-white hover:bg-[#0b2a71]">
+          <button
+            onClick={handleBooking}
+            disabled={loading}
+            className="rounded-full bg-[#041d52] px-4 py-3 text-sm font-semibold text-white hover:bg-[#0b2a71] disabled:cursor-not-allowed disabled:opacity-60"
+          >
             {loading ? "Sending..." : "Send Booking Request"}
           </button>
-          <a className="inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-3 text-sm font-semibold text-[#041d52]" href={`https://wa.me/254708669141?text=Hi,%20I%20want%20to%20book%20the%20Bamburi%20Fisheries%20apartment%20(${bedrooms}%20bed)%20from%20${checkIn}%20to%20${checkOut}.`}>
+          <a
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-3 text-sm font-semibold text-[#041d52]"
+            href={`https://wa.me/254708669141?text=Hi,%20I%20want%20to%20book%20this%20property%20(${propertySlug})%20from%20${checkIn}%20to%20${checkOut}.`}
+            target="_blank"
+            rel="noreferrer"
+          >
             Message on WhatsApp
           </a>
         </div>
