@@ -8,6 +8,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Keron Premier Properties | Luxury Real Estate Kenya",
   description:
