@@ -78,14 +78,37 @@ export default function Hero() {
         className="relative overflow-hidden rounded-[3rem] bg-[#041d52] p-8 text-white shadow-soft"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.24),_transparent_28%)]" />
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="pointer-events-none absolute right-6 top-6 hidden rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-[#041d52] text-slate-950 shadow-soft md:block"
+        >
+          Seaside comfort, premium finish.
+        </motion.div>
         <div className="relative z-10 grid gap-6">
-          <Image
-            src="/images/hero-gallery.png"
-            alt="Luxury real estate showcase"
-            width={900}
-            height={700}
-            className="h-[420px] w-full rounded-[2rem] object-cover shadow-[0_50px_90px_rgba(0,0,0,0.18)]"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.7 }}
+            className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_90px_rgba(0,0,0,0.18)]"
+          >
+            <Image
+              src="/images/hero-gallery.png"
+              alt="Luxury real estate showcase"
+              width={900}
+              height={700}
+              className="h-[420px] w-full rounded-[2rem] object-cover"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.8 }}
+              className="absolute left-6 top-6 rounded-3xl bg-[#041d52]/90 px-4 py-3 text-sm font-semibold text-white shadow-soft"
+            >
+              Coastal retreat with private concierge.
+            </motion.div>
+          </motion.div>
 
           <div className="grid gap-4 rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur-xl text-slate-100">
             <div className="flex items-center justify-between gap-3">
@@ -112,15 +135,15 @@ export default function Hero() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
-            <Link href="/properties/bamburi-fisheries-apartments" className="rounded-3xl bg-[#d4af37] px-5 py-4 text-center text-sm font-semibold text-[#041d52] transition hover:bg-[#c79e2d]">
-              Book now
-            </Link>
-            <Link href="https://wa.me/254708669141" className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
-              WhatsApp
-            </Link>
-            <Link href="tel:+254708669141" className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
-              Call agent
-            </Link>
+            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl bg-[#d4af37] px-5 py-4 text-center text-sm font-semibold text-[#041d52] transition hover:bg-[#c79e2d]">
+              <Link href="/properties/bamburi-fisheries-apartments">Book now</Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
+              <Link href="https://wa.me/254708669141">WhatsApp</Link>
+            </motion.div>
+            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
+              <Link href="tel:+254708669141">Call agent</Link>
+            </motion.div>
           </div>
         </div>
       </motion.div>
