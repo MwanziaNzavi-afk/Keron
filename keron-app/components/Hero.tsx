@@ -3,147 +3,125 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="grid gap-12 lg:grid-cols-[1.2fr_0.9fr] lg:items-center">
-      <div className="space-y-8">
+    <section className="grid gap-8 py-4 sm:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12 lg:py-8">
+      <div className="space-y-6 sm:space-y-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full bg-[#d4af37]/15 px-4 py-2 text-sm font-semibold text-[#041d52] shadow-soft"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 rounded-full bg-[#d4af37]/15 px-3.5 py-2 text-xs font-semibold text-[#041d52] sm:text-sm"
         >
-          <Sparkles className="h-4 w-4" />
-          Kenya’s top luxury property marketplace
+          <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+          Premium real estate in Kenya
         </motion.div>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-5">
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7 }}
-            className="page-title max-w-3xl text-5xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-6xl"
+            transition={{ delay: 0.08, duration: 0.6 }}
+            className="page-title max-w-3xl text-[2.15rem] font-semibold leading-[1.08] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-6xl"
           >
-            Turn premium listings into fast, confident property decisions.
+            Find a place that feels like yours.
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.7 }}
-            className="max-w-2xl text-lg leading-8 text-slate-600"
+            transition={{ delay: 0.12, duration: 0.6 }}
+            className="max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-lg sm:leading-8"
           >
-            Explore coastal homes, investment land and short-stay residences with curated support, verified contracts and expert local guidance.
+            Discover carefully selected homes, short stays and investment opportunities with trusted local guidance from Keron Premier Properties.
           </motion.p>
 
-          <div className="flex flex-wrap gap-4">
-            <Link href="/properties" className="inline-flex items-center justify-center rounded-full bg-[#041d52] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#0b2a71]">
-              Browse Listings
-              <ArrowRight className="ml-3 h-4 w-4" />
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
+            <Link href="/properties" className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#041d52] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0b2a71]">
+              Browse properties <ArrowRight className="ml-2.5 h-4 w-4" />
             </Link>
-            <Link href="/short-stay" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-4 text-sm font-semibold text-slate-900 transition hover:border-[#041d52]">
+            <Link href="/short-stay" className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-[#041d52]">
               Book a stay
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#d4af37] px-6 py-4 text-sm font-semibold text-[#041d52] transition hover:bg-[#c79e2d]">
+            <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#d4af37] px-5 py-3 text-sm font-semibold text-[#041d52] transition hover:bg-[#c79e2d]">
               Talk to an agent
             </Link>
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-4">
           {[
-            { value: "+4.9", caption: "Guest rating" },
+            { value: "4.9/5", caption: "Guest rating" },
             { value: "238+", caption: "Deals closed" },
-            { value: "16", caption: "Premium locations" },
+            { value: "16", caption: "Locations" },
           ].map((stat) => (
             <motion.div
               key={stat.caption}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="rounded-[2rem] border border-slate-200 bg-white p-6 text-center shadow-soft"
+              transition={{ delay: 0.18, duration: 0.5 }}
+              className="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-[0_8px_24px_rgba(4,29,82,.05)] sm:rounded-[1.5rem] sm:p-5"
             >
-              <p className="text-3xl font-semibold text-slate-950">{stat.value}</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.28em] text-slate-500">{stat.caption}</p>
+              <p className="text-xl font-semibold text-slate-950 sm:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-[9px] font-medium uppercase tracking-[0.14em] text-slate-500 sm:mt-2 sm:text-xs sm:tracking-[0.2em]">{stat.caption}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
+        initial={{ opacity: 0, scale: 0.985 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 0.7 }}
-        className="relative overflow-hidden rounded-[3rem] bg-[#041d52] p-8 text-white shadow-soft"
+        transition={{ delay: 0.15, duration: 0.65 }}
+        className="relative overflow-hidden rounded-[2rem] bg-[#041d52] p-3.5 text-white shadow-[0_24px_60px_rgba(4,29,82,.16)] sm:rounded-[2.5rem] sm:p-5 lg:p-6"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.24),_transparent_28%)]" />
-        <motion.div
-          initial={{ opacity: 0, x: 16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="pointer-events-none absolute right-6 top-6 hidden rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-[#041d52] text-slate-950 shadow-soft md:block"
-        >
-          Seaside comfort, premium finish.
-        </motion.div>
-        <div className="relative z-10 grid gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
-            className="relative overflow-hidden rounded-[2rem] shadow-[0_50px_90px_rgba(0,0,0,0.18)]"
-          >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.22),_transparent_30%)]" />
+        <div className="relative z-10 grid gap-3.5 sm:gap-5">
+          <div className="relative overflow-hidden rounded-[1.5rem] shadow-[0_24px_50px_rgba(0,0,0,.16)] sm:rounded-[2rem]">
             <Image
               src="/images/hero-gallery.png"
               alt="Luxury real estate showcase"
               width={900}
               height={700}
-              className="h-[420px] w-full rounded-[2rem] object-cover"
+              className="h-[280px] w-full object-cover sm:h-[380px] lg:h-[430px]"
+              priority
             />
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.8 }}
-              className="absolute left-6 top-6 rounded-3xl bg-[#041d52]/90 px-4 py-3 text-sm font-semibold text-white shadow-soft"
-            >
-              Coastal retreat with private concierge.
-            </motion.div>
-          </motion.div>
-
-          <div className="grid gap-4 rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur-xl text-slate-100">
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <p className="text-sm uppercase tracking-[0.28em] text-slate-200/90">Featured stay</p>
-                <p className="mt-2 text-xl font-semibold">Bamburi Fisheries Apartments</p>
-              </div>
-              <div className="rounded-3xl bg-[#d4af37] px-4 py-3 text-sm font-semibold text-[#041d52]">Top rated</div>
+            <div className="absolute bottom-3 left-3 rounded-2xl bg-[#041d52]/90 px-3.5 py-2.5 text-xs font-semibold text-white backdrop-blur sm:bottom-5 sm:left-5 sm:px-4 sm:py-3 sm:text-sm">
+              Coastal living, thoughtfully selected.
             </div>
-            <p className="text-sm leading-7 text-slate-200/85">
-              A stylish coastal retreat with private pool access, luxury finishes and concierge support for leisure guests and corporate travelers.
+          </div>
+
+          <div className="rounded-[1.5rem] border border-white/15 bg-white/10 p-4 backdrop-blur-xl sm:rounded-[2rem] sm:p-5">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-slate-300 sm:text-xs sm:tracking-[0.28em]">Featured stay</p>
+                <p className="mt-1.5 text-base font-semibold sm:text-xl">Bamburi Fisheries Apartments</p>
+              </div>
+              <span className="shrink-0 rounded-full bg-[#d4af37] px-2.5 py-1.5 text-[10px] font-semibold text-[#041d52] sm:px-3 sm:text-xs">Top rated</span>
+            </div>
+            <p className="mt-3 text-xs leading-6 text-slate-200/85 sm:text-sm sm:leading-7">
+              A stylish coastal stay with modern finishes and easy booking for leisure and business guests.
             </p>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                "1 Bed",
-                "Sea view",
-                "Fast booking",
-              ].map((tag) => (
-                <span key={tag} className="rounded-3xl bg-white/10 px-4 py-3 text-center text-sm font-semibold text-slate-100">
+            <div className="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:gap-3">
+              {["1 Bed", "Wi-Fi", "Secure"].map((tag) => (
+                <span key={tag} className="rounded-xl bg-white/10 px-2 py-2 text-center text-[10px] font-semibold text-slate-100 sm:rounded-2xl sm:px-3 sm:py-2.5 sm:text-xs">
                   {tag}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl bg-[#d4af37] px-5 py-4 text-center text-sm font-semibold text-[#041d52] transition hover:bg-[#c79e2d]">
-              <Link href="/properties/bamburi-fisheries-apartments">Book now</Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
-              <Link href="https://wa.me/254708669141">WhatsApp</Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -4, scale: 1.01 }} className="rounded-3xl border border-white/20 px-5 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40">
-              <Link href="tel:+254708669141">Call agent</Link>
-            </motion.div>
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <Link href="/properties/bamburi-fisheries-apartments" className="rounded-xl bg-[#d4af37] px-2 py-2.5 text-center text-xs font-semibold text-[#041d52] transition hover:bg-[#c79e2d] sm:rounded-2xl sm:py-3">
+              View stay
+            </Link>
+            <Link href="https://wa.me/254708669141" className="rounded-xl border border-white/20 px-2 py-2.5 text-center text-xs font-semibold text-white transition hover:border-white/40 sm:rounded-2xl sm:py-3">
+              WhatsApp
+            </Link>
+            <Link href="tel:+254708669141" className="rounded-xl border border-white/20 px-2 py-2.5 text-center text-xs font-semibold text-white transition hover:border-white/40 sm:rounded-2xl sm:py-3">
+              Call agent
+            </Link>
           </div>
         </div>
       </motion.div>
