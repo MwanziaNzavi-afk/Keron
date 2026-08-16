@@ -14,34 +14,24 @@ export default function MlolongoApartmentPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="container mx-auto px-6 py-10 xl:px-0">
-        <div className="grid min-w-0 gap-8 xl:grid-cols-[minmax(0,1fr)_380px]">
-          <div className="space-y-6">
+      <main className="container mx-auto px-6 py-8 xl:px-0">
+        <div className="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="space-y-5">
             <PropertyGallery images={images} />
-            <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-soft">
-              <div className="flex flex-wrap items-start justify-between gap-6">
-                <div>
-                  <h1 className="text-3xl font-semibold text-slate-950">Studio Mlolongo</h1>
-                  <p className="mt-2 text-sm text-slate-600">Behind Signature Mall, Mlolongo</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-slate-500">Net price</p>
-                  <p className="mt-1 text-xl font-semibold text-slate-950">KES 2,500 / night</p>
-                </div>
+            <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div><h1 className="text-2xl font-semibold text-slate-950">Studio Mlolongo</h1><p className="mt-1 text-sm text-slate-500">Behind Signature Mall, Mlolongo</p></div>
+                <div className="sm:text-right"><p className="text-xs text-slate-500">From</p><p className="text-lg font-semibold text-slate-950">KES 2,500 / night</p></div>
               </div>
-              <div className="mt-7 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <h2 className="text-lg font-semibold">Overview</h2>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">A comfortable short-stay studio in Mlolongo, conveniently positioned behind Signature Mall.</p>
-                </div>
-                <div>
-                  <h2 className="text-lg font-semibold">Stay details</h2>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">Studio accommodation with one bathroom. Select your dates to send a booking request.</p>
-                </div>
+              <div className="mt-5 grid grid-cols-3 gap-2">
+                <div className="rounded-xl bg-slate-50 p-3"><p className="text-xs text-slate-500">Type</p><p className="mt-1 text-sm font-semibold">Studio</p></div>
+                <div className="rounded-xl bg-slate-50 p-3"><p className="text-xs text-slate-500">Bathroom</p><p className="mt-1 text-sm font-semibold">1</p></div>
+                <div className="rounded-xl bg-slate-50 p-3"><p className="text-xs text-slate-500">Wi-Fi</p><p className="mt-1 text-sm font-semibold">Included</p></div>
               </div>
+              <p className="mt-5 text-sm leading-6 text-slate-600">Comfortable short-stay studio accommodation conveniently located behind Signature Mall.</p>
             </section>
           </div>
-          <BookingWidget propertySlug="mlolongo-apartment" price1={2500} price2={2500} />
+          <div><BookingWidget propertySlug="mlolongo-apartment" price1={2500} price2={2500} /></div>
         </div>
       </main>
       <Footer />
