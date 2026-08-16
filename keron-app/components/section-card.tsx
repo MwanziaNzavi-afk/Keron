@@ -11,16 +11,16 @@ interface SectionCardProps {
 export function SectionCard({ title, description, icon }: SectionCardProps) {
   return (
     <motion.article
-      initial={{ y: 18, opacity: 0 }}
+      initial={{ y: 14, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="glass-card group rounded-[2rem] border border-white/25 p-8 transition hover:-translate-y-1 hover:border-[#d4af37]/40"
+      className="glass-card group rounded-[1.5rem] p-5 transition hover:-translate-y-1 hover:border-[#d4af37]/40 sm:rounded-[2rem] sm:p-7"
     >
-      <div className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-[#041d52] text-white shadow-soft">
+      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#041d52] text-white shadow-soft sm:h-14 sm:w-14 sm:rounded-3xl">
         {icon}
       </div>
-      <h3 className="mt-6 text-xl font-semibold text-slate-950">{title}</h3>
-      <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
+      <h3 className="mt-4 text-lg font-semibold text-slate-950 sm:mt-5 sm:text-xl">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-slate-600 sm:mt-3 sm:leading-7">{description}</p>
     </motion.article>
   );
 }
