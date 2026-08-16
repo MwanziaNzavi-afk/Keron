@@ -2,143 +2,75 @@
 
 :root {
   color-scheme: light;
-  --color-background: #f8f9fa;
-  --color-surface: rgba(255, 255, 255, 0.92);
-  --color-surface-strong: rgba(9, 29, 69, 0.96);
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f4f7fb;
   --color-primary: #041d52;
+  --color-primary-light: #0b3474;
   --color-secondary: #d4af37;
-  --color-muted: #6c7284;
-  --color-border: rgba(4, 29, 82, 0.1);
-  --color-foreground: #11203b;
-  --radius: 32px;
-  --radius-sm: 18px;
-  --shadow-soft: 0 24px 80px rgba(4, 29, 82, 0.12);
-  --shadow-card: 0 18px 32px rgba(4, 29, 82, 0.12);
+  --color-secondary-soft: #f5ecd6;
+  --color-muted: #667085;
+  --color-border: rgba(4, 29, 82, 0.10);
+  --color-foreground: #10213d;
+  --radius: 24px;
+  --radius-sm: 16px;
+  --shadow-soft: 0 18px 55px rgba(4, 29, 82, 0.09);
+  --shadow-card: 0 10px 30px rgba(4, 29, 82, 0.07);
   --font-sans: var(--font-poppins);
-  --transition: 250ms ease;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  min-width: 0;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background: radial-gradient(circle at top, rgba(4, 29, 82, 0.12), transparent 28%), linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-p,
-li,
-span,
-button,
-input,
-textarea {
-  word-break: break-word;
-}
-
-::selection {
-  background: rgba(212, 175, 55, 0.24);
-}
-
-.section-border {
-  border-top: 1px solid rgba(4, 29, 82, 0.08);
-}
-
-.glass-card {
-  background: var(--color-surface);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.52);
-  box-shadow: var(--shadow-card);
-}
-
-.glow-button {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(255, 255, 255, 0.98));
-}
-
-.page-title {
-  text-shadow: 0 16px 32px rgba(4, 29, 82, 0.08);
-}
-
-/* Responsive Keron header logo.
-   Change these variables to tune the logo without touching the component. */
-:root {
+  --transition: 220ms ease;
   --keron-logo-mobile-width: 155px;
   --keron-logo-tablet-width: 190px;
   --keron-logo-desktop-width: 225px;
 }
 
-.site-logo-link {
-  display: block;
-  width: var(--keron-logo-mobile-width);
-  max-width: 55vw;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; min-width: 0; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
+button, input, textarea, select { font: inherit; }
+a { color: inherit; text-decoration: none; }
+img, svg, video { display: block; max-width: 100%; height: auto; }
+p, li, span, button, input, textarea { overflow-wrap: anywhere; }
+::selection { background: rgba(212, 175, 55, 0.24); }
 
-.site-logo {
-  width: 100% !important;
-  height: auto !important;
-  max-height: 62px;
-}
+.container { width: 100%; margin-inline: auto; }
+.glass-card { background: rgba(255,255,255,.9); backdrop-filter: blur(18px); border: 1px solid rgba(4,29,82,.08); box-shadow: var(--shadow-card); }
+.shadow-soft { box-shadow: var(--shadow-soft); }
+.page-title { text-shadow: 0 10px 28px rgba(4,29,82,.06); }
+
+.site-logo-link { display: block; width: var(--keron-logo-mobile-width); max-width: 55vw; }
+.site-logo { width: 100% !important; height: auto !important; max-height: 58px; }
 
 @media (min-width: 640px) {
-  .site-logo-link {
-    width: var(--keron-logo-tablet-width);
-    max-width: 40vw;
-  }
-
-  .site-logo {
-    max-height: 72px;
-  }
+  .site-logo-link { width: var(--keron-logo-tablet-width); max-width: 40vw; }
+  .site-logo { max-height: 64px; }
 }
-
 @media (min-width: 1280px) {
-  .site-logo-link {
-    width: var(--keron-logo-desktop-width);
-    max-width: none;
-  }
-
-  .site-logo {
-    max-height: 80px;
-  }
+  .site-logo-link { width: var(--keron-logo-desktop-width); max-width: none; }
+  .site-logo { max-height: 68px; }
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 1.25rem;
-  }
+@media (max-width: 767px) {
+  .container { padding-inline: 1rem; }
+  .page-title { letter-spacing: -0.025em; }
 }
-
+@media (max-width: 480px) {
+  :root { --keron-logo-mobile-width: 142px; }
+  .container { padding-inline: .875rem; }
+}
 @media (max-width: 390px) {
-  :root {
-    --keron-logo-mobile-width: 135px;
-  }
+  :root { --keron-logo-mobile-width: 132px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
