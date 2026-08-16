@@ -19,8 +19,8 @@ interface PropertyCardProps {
 export function PropertyCard({ title, location, price, href, image, bedrooms, bathrooms, badge }: PropertyCardProps) {
   return (
     <motion.article
-      whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-soft transition"
+      whileHover={{ y: -4 }}
+      className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_12px_32px_rgba(4,29,82,0.08)] transition"
     >
       <Link href={href} className="relative block overflow-hidden bg-slate-100">
         <Image
@@ -28,42 +28,45 @@ export function PropertyCard({ title, location, price, href, image, bedrooms, ba
           alt={title}
           width={900}
           height={600}
-          className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-105"
+          className="h-[230px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[250px]"
         />
-        <div className="absolute left-6 top-6 rounded-full bg-[#041d52] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_42px_rgba(4,29,82,0.24)]">
+        <div className="absolute left-4 top-4 rounded-full bg-[#041d52] px-3 py-1.5 text-xs font-semibold text-white shadow-[0_8px_24px_rgba(4,29,82,0.2)]">
           {badge ?? "Featured"}
         </div>
       </Link>
-      <div className="p-7">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-950">{title}</h3>
-            <p className="mt-2 text-sm text-slate-500">{location}</p>
+
+      <div className="p-5 sm:p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h3 className="text-lg font-semibold leading-6 text-slate-950 sm:text-xl">{title}</h3>
+            <p className="mt-1.5 text-sm leading-5 text-slate-500">{location}</p>
           </div>
-          <div className="inline-flex items-center rounded-full bg-[#d4af37]/15 px-3 py-2 text-sm font-semibold text-[#041d52]">
-            <Star className="mr-2 h-4 w-4" />
+          <div className="inline-flex shrink-0 items-center rounded-full bg-[#d4af37]/15 px-2.5 py-1.5 text-xs font-semibold text-[#041d52]">
+            <Star className="mr-1.5 h-3.5 w-3.5" />
             4.9
           </div>
         </div>
-        <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2">
-            <BedDouble className="h-4 w-4" />
+
+        <div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1.5">
+            <BedDouble className="h-3.5 w-3.5" />
             {bedrooms}
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2">
-            <ShowerHead className="h-4 w-4" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1.5">
+            <ShowerHead className="h-3.5 w-3.5" />
             {bathrooms}
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-2">
-            <MapPin className="h-4 w-4" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1.5">
+            <MapPin className="h-3.5 w-3.5" />
             {location.split(",")[0]}
           </span>
         </div>
-        <div className="mt-7 flex items-center justify-between gap-4">
-          <p className="text-lg font-semibold text-slate-950">{price}</p>
+
+        <div className="mt-5 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+          <p className="text-base font-semibold leading-5 text-slate-950">{price}</p>
           <Link
             href={href}
-            className="inline-flex min-w-[150px] items-center justify-center rounded-full border border-white/10 bg-gradient-to-r from-[#1d5ebf] via-[#0c3f8a] to-[#041d52] px-6 py-3 text-sm font-semibold uppercase tracking-[0.04em] text-white shadow-[0_22px_48px_rgba(4,29,82,0.22)] transition duration-200 hover:from-[#1149a7] hover:via-[#0b3474] hover:to-[#041d52] hover:shadow-[0_24px_56px_rgba(4,29,82,0.28)] focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-white/10 bg-gradient-to-r from-[#1d5ebf] via-[#0c3f8a] to-[#041d52] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.03em] text-white shadow-[0_12px_28px_rgba(4,29,82,0.18)] transition duration-200 hover:from-[#1149a7] hover:via-[#0b3474] hover:to-[#041d52] focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2"
           >
             View Details
           </Link>
