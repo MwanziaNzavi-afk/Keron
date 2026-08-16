@@ -89,8 +89,56 @@ textarea {
   text-shadow: 0 16px 32px rgba(4, 29, 82, 0.08);
 }
 
+/* Responsive Keron header logo.
+   Change these variables to tune the logo without touching the component. */
+:root {
+  --keron-logo-mobile-width: 155px;
+  --keron-logo-tablet-width: 190px;
+  --keron-logo-desktop-width: 225px;
+}
+
+.site-logo-link {
+  display: block;
+  width: var(--keron-logo-mobile-width);
+  max-width: 55vw;
+}
+
+.site-logo {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 62px;
+}
+
+@media (min-width: 640px) {
+  .site-logo-link {
+    width: var(--keron-logo-tablet-width);
+    max-width: 40vw;
+  }
+
+  .site-logo {
+    max-height: 72px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-logo-link {
+    width: var(--keron-logo-desktop-width);
+    max-width: none;
+  }
+
+  .site-logo {
+    max-height: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding-inline: 1.25rem;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --keron-logo-mobile-width: 135px;
   }
 }
